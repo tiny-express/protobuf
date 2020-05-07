@@ -163,8 +163,8 @@ namespace internal {
 // Strongly references the given variable such that the linker will be forced
 // to pull in this variable's translation unit.
 template <typename T>
-void StrongReference(const T& var) {
-  auto volatile unused = &var;
+void StrongReference(const T& variable) {
+  auto volatile unused = &variable;
   (void)&unused;  // Use address to avoid an extra load of "unused".
 }
 

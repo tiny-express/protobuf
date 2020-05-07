@@ -1,6 +1,8 @@
 # Minimum CMake required
 cmake_minimum_required(VERSION 3.1.3)
 
+include_directories("/usr/local/include")
+
 if(protobuf_VERBOSE)
   message(STATUS "Protocol Buffers Configuring...")
 endif()

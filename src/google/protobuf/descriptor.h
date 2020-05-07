@@ -430,6 +430,10 @@ class PROTOBUF_EXPORT Descriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef MessageOptions OptionsType;
 
@@ -450,10 +454,6 @@ class PROTOBUF_EXPORT Descriptor {
   void DebugString(int depth, std::string* contents,
                    const DebugStringOptions& options,
                    bool include_opening_clause) const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;
@@ -745,6 +745,10 @@ class PROTOBUF_EXPORT FieldDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef FieldOptions OptionsType;
 
@@ -768,10 +772,6 @@ class PROTOBUF_EXPORT FieldDescriptor {
 
   // Helper function that returns the field type name for DebugString.
   std::string FieldTypeNameDebugString() const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   // Returns true if this is a map message type.
   bool is_map_message_type() const;
@@ -879,6 +879,10 @@ class PROTOBUF_EXPORT OneofDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef OneofOptions OptionsType;
 
@@ -890,9 +894,6 @@ class PROTOBUF_EXPORT OneofDescriptor {
   void DebugString(int depth, std::string* contents,
                    const DebugStringOptions& options) const;
 
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;
@@ -1006,6 +1007,10 @@ class PROTOBUF_EXPORT EnumDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef EnumOptions OptionsType;
 
@@ -1027,10 +1032,6 @@ class PROTOBUF_EXPORT EnumDescriptor {
   // See Descriptor::DebugString().
   void DebugString(int depth, std::string* contents,
                    const DebugStringOptions& options) const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;
@@ -1114,6 +1115,10 @@ class PROTOBUF_EXPORT EnumValueDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef EnumValueOptions OptionsType;
 
@@ -1124,10 +1129,6 @@ class PROTOBUF_EXPORT EnumValueDescriptor {
   // See Descriptor::DebugString().
   void DebugString(int depth, std::string* contents,
                    const DebugStringOptions& options) const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;
@@ -1193,6 +1194,10 @@ class PROTOBUF_EXPORT ServiceDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef ServiceOptions OptionsType;
 
@@ -1203,10 +1208,6 @@ class PROTOBUF_EXPORT ServiceDescriptor {
   // See Descriptor::DebugString().
   void DebugString(std::string* contents,
                    const DebugStringOptions& options) const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;
@@ -1279,6 +1280,10 @@ class PROTOBUF_EXPORT MethodDescriptor {
   // |*out_location| unchanged iff location information was not available.
   bool GetSourceLocation(SourceLocation* out_location) const;
 
+ // Walks up the descriptor tree to generate the source location path
+ // to this descriptor from the file root.
+ void GetLocationPath(std::vector<int>* output) const;
+
  private:
   typedef MethodOptions OptionsType;
 
@@ -1289,10 +1294,6 @@ class PROTOBUF_EXPORT MethodDescriptor {
   // See Descriptor::DebugString().
   void DebugString(int depth, std::string* contents,
                    const DebugStringOptions& options) const;
-
-  // Walks up the descriptor tree to generate the source location path
-  // to this descriptor from the file root.
-  void GetLocationPath(std::vector<int>* output) const;
 
   const std::string* name_;
   const std::string* full_name_;

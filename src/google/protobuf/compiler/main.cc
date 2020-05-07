@@ -30,6 +30,7 @@
 
 // Author: kenton@google.com (Kenton Varda)
 
+#include <google/protobuf/compiler/native/cpp_generator.h>
 #include <google/protobuf/compiler/cpp/cpp_generator.h>
 #include <google/protobuf/compiler/java/java_generator.h>
 #include <google/protobuf/compiler/js/js_generator.h>
@@ -50,6 +51,11 @@ int ProtobufMain(int argc, char* argv[]) {
 
   CommandLineInterface cli;
   cli.AllowPlugins("protoc-");
+
+    // Proto2 Native C++
+    native::CppGenerator native_generator;
+    cli.RegisterGenerator("--native_out", "--native_opt", &native_generator,
+                          "Generate Native C++ header and source.");
 
   // Proto2 C++
   cpp::CppGenerator cpp_generator;
